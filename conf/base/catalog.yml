@@ -1,0 +1,7 @@
+snp_names_response:
+  type: kedro.extras.datasets.api.APIDataSet
+  url: https://pkgstore.datahub.io/core/s-and-p-500-companies/constituents_json/data/3ce4f27cf727a5e445c08545e0b58bb0/constituents_json.json
+
+snp_names:
+  type: kedro.extras.datasets.json.JSONDataSet
+  filepath: data/01_raw/snp_names.json

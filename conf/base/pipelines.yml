@@ -1,0 +1,6 @@
+acquisition_pipeline:
+  =: pipelinex.FlexiblePipeline
+  nodes:
+    - inputs: snp_names_response
+      func: midas.nodes.raw_data_acquisition.response_to_json
+      outputs: snp_names

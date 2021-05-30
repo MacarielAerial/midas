@@ -6,11 +6,12 @@ authors = ["MacarielAerial <yyu.mam2020@london.edu>"]
 license = "MIT"
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = "^3.8,<3.9"
 networkx = "^2.5.1"
 pipelinex = "pandas"
 pandas = "^1.2.4"
 yfinance = "^0.1.59"
+kedro = "^0.17.3"
 
 [tool.poetry.dev-dependencies]
 pytest = "^6.2.4"

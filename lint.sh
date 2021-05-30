@@ -29,4 +29,5 @@ echo -e "${li:?}Checking PEP8 compliance..."
 pflake8 .
 
 echo -e "${li:?}Checking Python types..."
-mypy eos
+mypy midas
+mypy tests
