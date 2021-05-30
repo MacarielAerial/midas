@@ -1,0 +1,36 @@
+name: Midas CI
+
+on: [push, pull_request]  # yamllint disable-line rule:truthy
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checks-out the repository under $GITHUB_WORKSPACE
+      - name: Check out GitHub repo
+        uses: actions/checkout@v2
+
+      - name: Setup Python
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.8
+
+      - name: Configure Python environment
+        run: |
+          pip install poetry
+          poetry install
+      - name: Lint code
+        run: |
+          poetry run bash ./lint.sh
+      - name: Test code
+        run: |
+          poetry run bash ./test.sh
+      - name: Upload pytest results
+        uses: actions/upload-artifact@v2
+        with:
+          name: pytest-results
+          path: junit/test-results.xml
+        # Use always() to always run this step to publish test results
+        # when there are test failures
+        if: ${{ always() }}

@@ -1,0 +1,35 @@
+[tool.poetry]
+name = "midas"
+version = "0.1.0"
+description = "The finance extension for project eos"
+authors = ["MacarielAerial <yyu.mam2020@london.edu>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+networkx = "^2.5.1"
+pipelinex = "pandas"
+pandas = "^1.2.4"
+yfinance = "^0.1.59"
+
+[tool.poetry.dev-dependencies]
+pytest = "^6.2.4"
+black = "^21.5b1"
+isort = "^5.8.0"
+mypy = "^0.812"
+yamllint = "^1.26.1"
+pyproject-flake8 = "^0.0.1-alpha.2"
+
+[tool.flake8]
+max-line-length = 100
+extend-ignore = "E203,"
+
+[tool.pytest.ini_options]
+log_cli = true
+log_cli_level = "INFO"
+log_cli_format = "%(asctime)s [%(levelname)8s] %(message)s (%(filename)s:%(lineno)s)"
+log_cli_date_format = "%Y-%m-%d %H:%M:%S"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
