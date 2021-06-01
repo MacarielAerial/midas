@@ -25,6 +25,10 @@ pyproject-flake8 = "^0.0.1-alpha.2"
 max-line-length = 100
 extend-ignore = "E203,"
 
+[tool.isort]
+profile = 'black'
+skip = '.venv'
+
 [tool.pytest.ini_options]
 log_cli = true
 log_cli_level = "INFO"
